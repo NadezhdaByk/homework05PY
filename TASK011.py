@@ -8,7 +8,7 @@
 import random
 i=random.randint(1,2)
 print(i)
-candle=221
+candle=2021
 
 if i==1:
     print('Первым ходит бот')
