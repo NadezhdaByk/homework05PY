@@ -7,7 +7,7 @@
 # stroka = '10a12b9c'
 
 
-with open('file.txt', 'r+', encoding='utf-8') as file:
+with open('file.txt', 'r', encoding='utf-8') as file:
     arr = [str(i) for i in file.read()]
 
 count=[]
@@ -33,5 +33,9 @@ itog=[]
 for i in range(len(count)):
     itog.append(str(count[i])+new_arr[i])
     
+new_itog="".join(itog)
+print(new_itog)
 
-print("".join(itog))
+data=open('file.txt', 'w', encoding='utf-8')
+data.write(new_itog)
+data.close()
