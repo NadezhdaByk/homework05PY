@@ -1,4 +1,4 @@
-# Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
+# Реализуйте RLE алгоритм: реализуйте модуль сжатия данных.
 
 # Входные и выходные данные хранятся в отдельных текстовых файлах.
 #  
@@ -11,18 +11,18 @@ with open('file.txt', 'r', encoding='utf-8') as file:
     arr = [str(i) for i in file.read()]
 
 count=[]
-counter=0
+counter=1
 new_arr=[]
 i=0
-while arr!=0:
+while len(arr)!=0:
    f=arr[0]
    new_arr.append(f)
-   for j in range(len(arr)):
+   for j in range(1,len(arr)):
         if arr[j]==f:
             counter+=1
             
    count.append(counter)
-   counter=0
+   counter=1
    i+=1
    while f in arr:
        arr.remove(f)
@@ -36,6 +36,6 @@ for i in range(len(count)):
 new_itog="".join(itog)
 print(new_itog)
 
-data=open('file.txt', 'w', encoding='utf-8')
+data=open('file3.txt', 'w', encoding='utf-8')
 data.write(new_itog)
 data.close()
